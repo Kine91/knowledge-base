@@ -1,6 +1,6 @@
 # Senior Full-Stack Engineering Knowledge Base
 
-Baza wiedzy do rozmowy na stanowisko Senior Full-Stack Engineer (AWS + mikroserwisy + Node.js/TypeScript + PostgreSQL + React + SAP).
+Techniczne kompendium dla Senior Full-Stack Engineer (AWS + mikroserwisy + Node.js/TypeScript + PostgreSQL + React + SAP).
 
 ## Start
 
@@ -8,6 +8,7 @@ Otwórz [index.html](index.html) lokalnie w przeglądarce. Wszystkie linki międ
 
 ## Rozdziały
 
+- [AWS Lambda — deep dive: lifecycle, hot/cold state, concurrency, quotas i niezawodność](lambda.html)
 - [Mikroserwisy i system design](architecture.html)
 - [AWS: wybór usług i architektura](aws.html)
 - [SQS, SNS i niezawodność zdarzeń](messaging.html)
@@ -21,7 +22,7 @@ Otwórz [index.html](index.html) lokalnie w przeglądarce. Wszystkie linki międ
 
 ## Metoda nauki
 
-Każdy blok ma trzy części: **wyjaśnienie**, **praktyka / decyzja projektowa** oraz **pytanie senior / pułapka**. Po lekturze spróbuj omówić rozwiązanie bez notatek, wskazać alternatywy i zaproponować test awarii.
+Każdy blok ma trzy części: **mechanika działania**, **implikacje produkcyjne** i **trade-offy**. Baza celowo omija definicje podstawowe. Rozdziały mają zachowywać szczegóły istotne dla projektowania, debugowania i utrzymania systemów w produkcji.
 
 Przewodni przykład: system zamówień z API Gateway, Node.js, PostgreSQL, transactional outbox, SQS i integracją SAP.
 
