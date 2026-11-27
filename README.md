@@ -1,36 +1,44 @@
-# Senior Full-Stack Engineering Knowledge Base
+# Senior Engineering Knowledge Base
 
-Techniczne kompendium dla Senior Full-Stack Engineer (AWS + mikroserwisy + Node.js/TypeScript + PostgreSQL + React + SAP).
+Techniczne kompendium dla Senior Full-Stack Engineer: mechanizmy, granice, failure modes, trade-offs i przykłady. Bez pytań rekrutacyjnych.
 
-## Start
+## Start lokalnie
 
-Otwórz [index.html](index.html) lokalnie w przeglądarce. Wszystkie linki między rozdziałami są względne, więc nie potrzeba serwera, bundlera ani instalacji.
+```bash
+git clone https://github.com/Kine91/knowledge-base.git
+cd knowledge-base
+# otwórz index.html w przeglądarce lub:
+python -m http.server 8000
+```
+
+Strony działają lokalnie bez bundlera. GitHub pokazuje źródło HTML, nie renderuje strony.
 
 ## Rozdziały
 
-- [AWS Lambda — deep dive: lifecycle, hot/cold state, concurrency, quotas i niezawodność](lambda.html)
-- [Mikroserwisy i system design](architecture.html)
-- [AWS: wybór usług i architektura](aws.html)
-- [SQS, SNS i niezawodność zdarzeń](messaging.html)
-- [Node.js i TypeScript](node-typescript.html)
-- [PostgreSQL](postgres.html)
-- [React i architektura frontendowa](react.html)
-- [Clean Code i Design Patterns](patterns.html)
-- [Integracje SAP](sap.html)
-- [Strategia testowania](testing.html)
-- [Pytania rekrutacyjne i plan](interview.html)
+- [AWS — architektura](aws.html) — Dobór usług, koszty, IaC, availability
+- [Lambda](lambda.html) — Lifecycle, cold/warm, concurrency, limits
+- [API Gateway](api-gateway.html) — Ingress, quotas, JWT, timeout
+- [ECS / Fargate / EC2](compute.html) — Task lifecycle, deployment, autoscaling
+- [SQS / SNS / EventBridge](messaging.html) — Delivery, batching, retry, outbox, Step Functions
+- [S3](s3.html) — Consistency, multipart, security, events
+- [IAM / VPC / RDS](aws-security.html) — Policies, STS, routing, secrets, failover
+- [Mikroserwisy / system design](architecture.html) — Consistency, saga, capacity, resilience, CQRS
+- [Backend API](backend-api.html) — HTTP, gRPC, WebSocket, auth, idempotency
+- [PostgreSQL](postgres.html) — MVCC, WAL, isolation, locks, tuning, pooling
+- [DynamoDB / Redis / Kafka](data-messaging.html) — Partitioning, cache, offsets, delivery
+- [Node.js / runtime](node-typescript.html) — Event loop, libuv, streams, GC, NestJS
+- [TypeScript](typescript.html) — Variance, generics, conditional types, modules
+- [React / frontend](react.html) — Fiber, scheduling, effects, state, SSR, performance
+- [Clean Code / Design Patterns](patterns.html) — SOLID, DDD, architecture, review
+- [SAP integration](sap.html) — Protocols, consistency, reconciliation, mapping
+- [Testowanie](testing.html) — Integration, contract, E2E, concurrency, performance
+- [Observability / SRE](operations.html) — SLO, tracing, diagnostics, incident runbooks
+- [Case study: system zamówień](interview.html) — Referencyjny system end-to-end i awarie
 
-## Metoda nauki
+## Standard rozbudowy
 
-Każdy blok ma trzy części: **mechanika działania**, **implikacje produkcyjne** i **trade-offy**. Baza celowo omija definicje podstawowe. Rozdziały mają zachowywać szczegóły istotne dla projektowania, debugowania i utrzymania systemów w produkcji.
-
-Przewodni przykład: system zamówień z API Gateway, Node.js, PostgreSQL, transactional outbox, SQS i integracją SAP.
-
-## Konwencja rozbudowy
-
-- Jeden temat na osobny plik HTML lub rozszerzenie istniejącego rozdziału.
-- Dopisuj scenariusze z produkcji, kod TypeScript/SQL, failure modes, monitoring oraz pytania rekrutacyjne.
-- Zachowuj nawigację do innych rozdziałów i do index.html.
-- Przy szczegółowych limitach, cenach i konfiguracji AWS weryfikuj aktualne oficjalne dokumenty przed wdrożeniem.
-
-> Materiały są punktem wyjścia do pogłębienia i praktycznych laboratoriów, nie zastępują dokumentacji usług ani ćwiczeń hands-on.
+- Mechanika, konsekwencje, edge cases, scenariusze awarii, diagnostyka, trade-offs.
+- Przykłady kodu z jawnymi założeniami; nie wszystkie są gotowymi programami.
+- Limity AWS weryfikuj w aktualnych docs i Service Quotas dla konta/Regionu.
+- Jeden wspólny stylesheet, nawigacja i spis treści. Bez quizów i podstawowych definicji.
+- Plik interview.html zachowuje adres historyczny; zawiera techniczny case study.
